@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Shoe Record's</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #87CEEB; /* Azul claro */
+    }
+
+    .jumbotron {
+      background-color: #2b92bb; /* Azul */
+    }
+
+    .navbar {
+      background-color: #2b92bb; /* Azul */
+    }
+
+    .navbar-brand {
+      color: #2b92bb !important; /* Azul */
+    }
+
+    .container, .modal-content, .modal-footer {
+      background-color: #2b92bb; /* Azul */
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    #totalCompra {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#" style="color: #2b92bb !important;">Shoe Record's</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+    </ul>
+  </div>
+</nav>
+
+<!-- Banner -->
+<div class="jumbotron text-center">
+  <h1>Bem-vindo à Shoe Record's</h1>
+  <p>Encontre os melhores sapatos sociais para todas as ocasiões!<br>
+    <a class="btn btn-primary" href="#catalog">Catálogo</a>
+    <a class="btn btn-primary" href="#contact" data-toggle="modal" data-target="#contactModal">Contato</a>
+    <a class="btn btn-primary" href="#" onclick="mostrarQuemSomos()">Quem Somos</a>
+  </p>
+</div>
+
+<!-- Catálogo -->
+<div id="catalog" class="container mt-5">
+  <h2>Catálogo</h2>
+
+  <!-- Produto 1 -->
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <img src="https://img.irroba.com.br/fit-in/600x600/filters:fill(transparent):quality(80)/dipaolos/catalog/558a.png" class="img-fluid" alt="Sapato 1">
+    </div>
+    <div class="col-md-8">
+      <h3>Sapato Elegante</h3>
+      <p>Preço: R$ 299,99</p>
+      <button class="btn btn-success" onclick="comprar(299.99)">Comprar</button>
+    </div>
+  </div>
+
+  <!-- Produto 2 -->
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <img src="https://img.irroba.com.br/fit-in/600x600/filters:fill(transparent):quality(80)/artsaeii/catalog/561.20220819144537.png" class="img-fluid" alt="Sapato 2">
+    </div>
+    <div class="col-md-8">
+      <h3>Sapato Casual</h3>
+      <p>Preço: R$ 189,90</p>
+      <button class="btn btn-success" onclick="comprar(189.90)">Comprar</button>
+    </div>
+  </div>
+
+  <!-- Produto 3 -->
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <img src="https://img.irroba.com.br/fit-in/600x600/filters:fill(transparent):quality(80)/dipaolos/catalog/267b.png" class="img-fluid" alt="Sapato 3">
+    </div>
+    <div class="col-md-8">
+      <h3>Sapato Social</h3>
+      <p>Preço: R$ 199,90</p>
+      <button class="btn btn-success" onclick="comprar(199.90)">Comprar</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Total da Compra -->
+<div class="container mb-5">
+  <h3>Total da Compra</h3>
+  <p id="totalCompra">Seu carrinho está vazio.</p>
+  <button class="btn btn-primary" onclick="finalizarCompra()">Finalizar Compra</button>
+</div>
+
+<!-- Modal de Contato -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Entre em Contato</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Telefone: 99731-4579</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Quem Somos -->
+<div class="modal fade" id="quemSomosModal" tabindex="-1" role="dialog" aria-labelledby="quemSomosModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="quemSomosModalLabel">Quem Somos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Bem-vindo à Shoe Record's, somos uma empresa especializada em sapatos sociais. Somos ainda muito novos no mercado, mas ficamos muito felizes com sua chegada aqui até nós. Esperamos que tenha uma ótima experiência com nosso site, e nos perdoe qualquer erro, estamos no começo de uma longa jornada. Obrigado e volte sempre...</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+<script>
+  var totalCompra = 0;
+
+  function comprar(valor) {
+    totalCompra += valor;
+    document.getElementById("totalCompra").innerText = "Total da Compra: R$ " + totalCompra.toFixed(2);
+  }
+
+  function finalizarCompra() {
+    alert("Compra finalizada! Total: R$ " + totalCompra.toFixed(2));
+    totalCompra = 0;
+    document.getElementById("totalCompra").innerText = "Seu carrinho está vazio.";
+  }
+
+  function mostrarQuemSomos() {
+    $('#quemSomosModal').modal('show');
+  }
+</script>
+
+</body>
+</html>
